@@ -38,10 +38,7 @@
 ---
 
 ## 📘 Lab Work №1: Compilation, Assembly & IPC
-[![Arch Linux](https://img.shields.io/badge/Linux-Arch-blue?logo=arch-linux&logoColor=white)](https://archlinux.org/)  
-[![GCC](https://img.shields.io/badge/Compiler-GCC-orange?logo=gnu&logoColor=white)](https://gcc.gnu.org/)  
-[![POSIX](https://img.shields.io/badge/IPC-POSIX%20Semaphores-blueviolet?logo=linux&logoColor=white)](#)  
-[![Build - Make](https://img.shields.io/badge/Build-Make-informational?logo=gnubash&logoColor=white)](#)
+[![Arch Linux](https://img.shields.io/badge/Linux-Arch-blue?logo=arch-linux&logoColor=white)](https://archlinux.org/)  [![GCC](https://img.shields.io/badge/Compiler-GCC-orange?logo=gnu&logoColor=white)](https://gcc.gnu.org/)  [![POSIX](https://img.shields.io/badge/IPC-POSIX%20Semaphores-blueviolet?logo=linux&logoColor=white)](#)  [![Build - Make](https://img.shields.io/badge/Build-Make-informational?logo=gnubash&logoColor=white)](#)
 
 ---
 
