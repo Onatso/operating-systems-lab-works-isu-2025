@@ -35,6 +35,13 @@
   - [🌐 Router Configuration](#-router-configuration)
   - [✅ Summary](#-summary)
 
+- [📘 Lab Work №3: Implementing a Bash Script](#-lab-work-3-implementing-a-bash-script)
+  - [📝 Bash Script](#-bash-script)
+  - [🧪 Testing](#-testing)
+  - [✅ Summary](#-summary)
+ 
+    
+
 ---
 
 ## 📘 Lab Work №1: Compilation, Assembly & IPC
@@ -558,7 +565,73 @@ I began setting up **port forwarding** on my home router to allow external SSH a
 
 - All installation steps were done without a graphical installer.
 - Arch Linux was installed using manual partitioning, base system setup, and post-install configurations.
-- SSH access setup included creating a user, enabling the `sshd` service, and setting up firewall rules (if any).
 
 ---
+
+## 📘 Lab Work №3: Implementing a Bash Script
+[![Arch Linux](https://img.shields.io/badge/Linux-Arch-blue?logo=arch-linux&logoColor=white)](https://archlinux.org/) [![Bash](https://img.shields.io/badge/Scripting-Bash-yellowgreen?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/) [![Backup](https://img.shields.io/badge/Task-Backup-blueviolet?logo=cloud&logoColor=white)](#)
+
+In this lab, I studied the provided manual and completed the first task:  
+**Copy all images from the folder to the backup folder.**
+
+---
+
+### 📝 Bash Script
+
+```bash
+#!/bin/bash
+
+# Argument check
+if [ $# -eq 0 ]; then
+    source_dir=$(pwd)
+elif [ $# -eq 1 ]; then
+    if [ -d "$1" ]; then
+        source_dir=$(realpath "$1")
+    else
+        echo "Error: directory '$1' does not exist." >&2
+        exit 1
+    fi
+else
+    echo "Usage: $0 [directory]" >&2
+    exit 1
+fi
+
+# Create backup directory with timestamp
+timestamp=$(date +"%Y%m%d_%H%M%S")
+backup_dir="backup_$timestamp"
+mkdir -p "$backup_dir" || exit 1
+
+# Find and copy image files with directory structure preservation
+count=0
+cd "$source_dir" || exit 1
+while IFS= read -r -d '' file; do
+    install -D -m 644 "$file" "$backup_dir/$file"
+    ((count++))
+done < <(find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" -o -iname "*.tiff" \) -print0)
+
+# Output report
+echo "Copied files: $count"
+echo "Backup created at: $(realpath "$backup_dir")"
+- SSH access setup included creating a user, enabling the `sshd` service, and setting up firewall rules (if any).
+```
+
+---
+
+### 🧪 Testing
+
+To test the script, I ran:
+```
+bash script1.sh images
+```
+Everything worked successfully (I checked it on my laptop with Arch Linux).
+
+---
+
+### ✅ Summary
+
+**Task**: Copy images from the specified directory to a backup folder.
+
+**Solution**: Implemented a bash script that checks for arguments, creates a backup directory with a timestamp, and copies image files while preserving the directory structure.
+
+**Testing**: The script was successfully tested on Arch Linux and produced the expected results.
 
