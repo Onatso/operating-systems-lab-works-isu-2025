@@ -26,6 +26,7 @@
     - [⚙️ Key Improvements](#-key-improvements-1)
     - [🗂️ New Project Structure](#-new-project-structure)
     - [📦 Project Structure (Final)](#-project-structure-final)
+  - [✅ Summary](#-summary)
 
 - [📘 Lab Work №2: Installing Linux](#-lab-work-2-installing-linux)
   - [🛠️ Installation Process](#-installation-process)
@@ -455,6 +456,38 @@ Added -pthread to CXXFLAGS and LDFLAGS.
 ---
 
 Using the `make` command on my **linux laptop** I built the project.
+
+## ✅ Summary
+
+| Task                                | Status     |
+|-------------------------------------|------------|
+| Implemented a recursive factorial function | ✅ Done    |
+| Analyzed the unoptimized assembly output   | ✅ Done    |
+| Explored compilation with GCC and optimizations | ✅ Done    |
+| Converted code to modular structure and created Makefile | ✅ Done    |
+| Implemented parallel processing with `fork`, semaphores, and shared memory | ✅ Done    |
+| Built and ran the project using `make` command | ✅ Done    |
+
+---
+
+### Key Points of the Lab:
+
+1. **GCC Compiler & Assembly**  
+   I wrote a simple **C++ factorial function** and explored its **assembly output** using different compiler optimizations. This helped me understand how a high-level program interacts with the underlying system, especially in terms of recursion and stack management.
+
+2. **Assembly Analysis**  
+   After compiling the program without optimizations (`-O0`), I analyzed the assembly code. I observed redundant stack operations and inefficient recursion handling, such as the lack of tail recursion optimization.
+
+3. **Parallel Processing**  
+   I extended the project by implementing **parallelism** using **POSIX semaphores** and **shared memory**. By using `fork()`, I allowed multiple processes to safely access a shared resource, showcasing basic interprocess communication and synchronization.
+
+4. **Makefile**  
+   I modularized the project by organizing the code into header and source files, and created a `Makefile` to automate the build process. This enhanced the project's maintainability and scalability.
+
+5. **Final Build**  
+   After successfully building the project on my Linux laptop, I ran and verified the program's behavior, ensuring it worked correctly and efficiently.
+
+---
 
 ## 📘 Lab Work №2: Installing Linux
 
