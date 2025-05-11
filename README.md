@@ -612,7 +612,6 @@ done < <(find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -
 # Output report
 echo "Copied files: $count"
 echo "Backup created at: $(realpath "$backup_dir")"
-- SSH access setup included creating a user, enabling the `sshd` service, and setting up firewall rules (if any).
 ```
 
 ---
